@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CartViewModel>
+
+@{
+    ViewBag.Title = "Magic e-commerce";
+}
+
+
+  <h2><img src="~/images/cart.svg" width="40px"/> &nbsp;&nbsp;Magic e-cart</h2>  
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Store Name
+            </th>
+            <th>
+                Total Quantity
+            </th>
+            <th>
+                Price/Item
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>        
+        @foreach(var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                <a class="saveButton" asp-action="Buy" asp-route-storeid="@item.StoreID" asp-route-id="@item.ProductID">Edit</a> 
+                <a class="backButton" asp-action="DeleteCart" asp-route-prodID="@item.ProductID" asp-route-storeID="@item.StoreID">Delete</a> 
+                </td>
+            </tr>
+        }
+
+        <tr>
+            @{
+                if (!Model.Any() )
+                {
+                <td> <h5> No products added to the cart. </h5> </td>
+                }
+                else
+                {
+                  <td> <h5>Total Price $@ViewData["TotalPrice"]</h5> <form asp-controller="Customer" asp-action="PaymentProcessing">
+                     <input type="submit" value="Buy" class="saveButton" />
+                    </form>  </td>
+
+                    
+                   
+                }
+
+            }
+        </tr>
+ 
+    </tbody>
+</table>
+<br><br>
+
+
+
+
+

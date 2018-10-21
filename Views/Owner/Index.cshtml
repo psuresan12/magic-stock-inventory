@@ -1,0 +1,50 @@
+@model IEnumerable<Assignment2.Models.OwnerInventory>
+
+@{
+    ViewData["Title"] = "Display Inventory";
+}
+
+<center> 
+    <img src="~/images/inventory.png" width="200px"/> 
+    <h2>Owner Inventory</h2>
+</center>
+
+<table id="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.StockLevel)
+            </th>
+           <th> Reset </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockLevel)
+            </td>
+            <td>
+                <a class="saveButton" asp-action="Edit" asp-route-id="@item.ProductID">Reset</a>
+            </td>
+        </tr>
+        
+}
+
+    </tbody>
+</table>
+
+ <center> <a  class="backButton" id="button" asp-action="Dashboard"> Dashboard</a> </center>
+       

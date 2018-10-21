@@ -1,0 +1,43 @@
+@model Assignment2.Models.StoreInventory
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h4>StoreInventory</h4>
+<hr />
+<div class="row">
+<div class="info">
+           <h2> Details </h2>
+       <div class="col-md-12">
+          <div class="col-md-6">@Html.DisplayNameFor(model => model.ProductID) : @Html.DisplayFor(model => model.Product.ProductID)  </div>
+          <div class="col-md-6">@Html.DisplayNameFor(model => model.Product.Name) :  @Html.DisplayFor(model => model.Product.Name)</div>
+      </div>
+          <br/>  <br/> 
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StoreID" />
+            <input type="hidden" asp-for="ProductID" />
+            <div class="form-group">
+                <label asp-for="StockLevel" class="control-label"></label>
+                <input asp-for="StockLevel" class="form-control" />
+                <span asp-validation-for="StockLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="saveButton"  />
+                <a class="backButton" asp-action="CreateNewStock">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

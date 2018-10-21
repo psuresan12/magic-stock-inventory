@@ -1,0 +1,80 @@
+﻿@model PaginatedList<StoreInventory>
+
+@{
+    ViewBag.Title = "Magic e-commerce";
+}
+
+
+  <h2><img src="~/images/cart.svg" width="40px"/> Magic e-commerce</h2>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Product Name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="saveButton" /> 
+            <a class="backButton" asp-action="Index">Refresh table</a>
+        </p>
+    </div>
+</form>
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" style="color:black;text-decoration:none;cursor:pointer;">Product Name</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StoreSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" style="color:black;text-decoration:none;cursor:pointer;">Store Name</a>
+            </th>
+            <th>
+                Available
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>        
+        @foreach(var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Store.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Price)
+                </td>
+            
+                <td>
+                    <a asp-action="Buy" asp-route-storeid="@item.StoreID" asp-route-id="@item.ProductID">Add to cart</a>
+                </td>
+             </tr>
+        }
+    </tbody>
+</table>
+<br><br>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+@* The paging buttons are displayed by tag helpers *@
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default backButton @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default saveButton @nextDisabled">
+   Next
+</a>
+

@@ -1,0 +1,12 @@
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/bin/Release/netcoreapp2.0/Assignment2.deps.json
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/bin/Release/netcoreapp2.0/Assignment2.runtimeconfig.json
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/bin/Release/netcoreapp2.0/Assignment2.runtimeconfig.dev.json
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/bin/Release/netcoreapp2.0/Assignment2.dll
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/bin/Release/netcoreapp2.0/Assignment2.pdb
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.csprojResolveAssemblyReference.cache
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.csproj.CoreCompileInputs.cache
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/UserSecretsAssemblyInfo.cs
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.AssemblyInfoInputs.cache
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.AssemblyInfo.cs
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.dll
+/Users/prasanthi/Documents/Learning/MVC .NET CORE/magic-inventory-system-master/Assignment2/obj/Release/netcoreapp2.0/Assignment2.pdb
